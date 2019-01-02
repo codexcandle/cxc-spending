@@ -1,0 +1,12 @@
+.div22 {
+    background-color:#99cc00;
+    padding:10px;
+}
+
+#headerImage{
+    background-image:url('./../images/spending.png');
+    background-repeat:no-repeat;
+    width:282px;
+    height:98px;
+    display:inline-block;
+}
