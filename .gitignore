@@ -1,7 +1,5 @@
-# ============ #
-# Large Files! #
-# ============ #
-www/_asset-large
+# Sensitive-Data directories
+_sensitive/
 
 # ============ #
 # OS generated #
