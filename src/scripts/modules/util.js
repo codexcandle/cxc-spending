@@ -37,21 +37,21 @@ class Util{
     }
     
     static getCurrencyString(number){
-        var decimalplaces = 2;
-        var decimalcharacter = ".";
-        var thousandseparater = ",";
-        var currSymbolPrefix = "$";
+        let decimalplaces = 2;
+        let decimalcharacter = ".";
+        let thousandseparater = ",";
+        let currSymbolPrefix = "$";
     
         number = parseFloat(number);
-        var sign = number < 0 ? "-" : "";
-        var formatted = new String(number.toFixed(decimalplaces));
+        let sign = number < 0 ? "-" : "";
+        let formatted = new String(number.toFixed(decimalplaces));
         if(decimalcharacter.length && decimalcharacter != "."){
            formatted = formatted.replace(/\./,decimalcharacter);
         }
-        var integer = "";
-        var fraction = "";
-        var strnumber = new String(formatted);
-        var dotpos = decimalcharacter.length ? strnumber.indexOf(decimalcharacter) : -1;
+        let integer = "";
+        let fraction = "";
+        let strnumber = new String(formatted);
+        let dotpos = decimalcharacter.length ? strnumber.indexOf(decimalcharacter) : -1;
         if(dotpos > -1){
           if(dotpos){
               integer = strnumber.substr(0,dotpos);
@@ -69,7 +69,7 @@ class Util{
            fraction += "0";
         }
     
-        temparray = new Array();
+        let temparray = new Array();
         while(integer.length > 3){
           temparray.unshift(integer.substr(-3));
           integer = integer.substr(0,integer.length-3);
@@ -78,7 +78,7 @@ class Util{
         temparray.unshift(integer);
         integer = temparray.join(thousandseparater);
        
-        var returnString = currSymbolPrefix + sign + integer;
+        let returnString = currSymbolPrefix + sign + integer;
         
         // show decimals
         // returnString += decimalcharacter + fraction;

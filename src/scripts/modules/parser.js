@@ -1,8 +1,8 @@
+import AppModel from './model';
+import Util from './util';
 import Papa from 'papaparse';
-import Util from 'util';
-import AppModel from 'model';
 
-class Parser {
+class CSVParser {
     constructor() {
 
     }
@@ -21,7 +21,6 @@ class Parser {
             }
         });
     }
-
 
     parseTransDataByMonth(data, year, monthIndex, billerDict, callback) {
         // logFunctionCall("parse_spending_by_month");
@@ -91,8 +90,8 @@ class Parser {
 
         // round! (2 sig-figs) 
         totalAmountMade = Math.round(Util.roundTo2SigFigs(totalAmountMade));
-        totalAmountPaid = Math.round(roundTo2SigFigs(totalAmountPaid));
-        totalAmountUnknown = Math.round(roundTo2SigFigs(totalAmountUnknown));
+        totalAmountPaid = Math.round(Util.roundTo2SigFigs(totalAmountPaid));
+        totalAmountUnknown = Math.round(Util.roundTo2SigFigs(totalAmountUnknown));
 
         // trigger callback
         if (typeof callback == "function") {
@@ -102,4 +101,4 @@ class Parser {
     }
 }
 
-export default Parser;
+export const parser = new CSVParser();

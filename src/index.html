@@ -18,5 +18,34 @@
     <div>
       <h4> with a green background </h4>
     </div>
+
+
+
+
+
+
+    <!-- TODO - factor this out...-->
+    <!-- form -->
+    <div id="formDiv">
+      <!-- text -->
+      <p>
+          <span id="text1" class="title1"></span>
+          <span id="text2" class="title2"></span>
+      </p>
+
+      <form>
+          month: <input id="month" type="number"><BR/>
+          year: <input id="year" type="number"><BR/>
+          
+          <input id="dateSubmit" class="button" type="button" value="submit" onclick="handleDateSubmit()">
+      </form>
+  </div>
+
+  <!-- chart space -->
+  <div id="pieChart"></div>
+
+
+
+
   </body>
 </html>

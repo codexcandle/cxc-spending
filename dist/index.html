@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Spending by Codebycandle</title>
-<link href="app.bundle.css?1f2432454b72a3094527" rel="stylesheet"></head>
+<link href="app.bundle.css?a6af3dedf20807e75465" rel="stylesheet"></head>
 
   <body>
 
@@ -18,5 +18,34 @@
     <div>
       <h4> with a green background </h4>
     </div>
-  <script type="text/javascript" src="./vendors.bundle.js?1f2432454b72a3094527"></script><script type="text/javascript" src="./app.bundle.js?1f2432454b72a3094527"></script></body>
+
+
+
+
+
+
+    <!-- TODO - factor this out...-->
+    <!-- form -->
+    <div id="formDiv">
+      <!-- text -->
+      <p>
+          <span id="text1" class="title1"></span>
+          <span id="text2" class="title2"></span>
+      </p>
+
+      <form>
+          month: <input id="month" type="number"><BR/>
+          year: <input id="year" type="number"><BR/>
+          
+          <input id="dateSubmit" class="button" type="button" value="submit" onclick="handleDateSubmit()">
+      </form>
+  </div>
+
+  <!-- chart space -->
+  <div id="pieChart"></div>
+
+
+
+
+  <script type="text/javascript" src="./vendors.bundle.js?a6af3dedf20807e75465"></script><script type="text/javascript" src="./app.bundle.js?a6af3dedf20807e75465"></script></body>
 </html>
