@@ -1,6 +1,6 @@
 class AppModel{
-    static TRANSACTIONS_CSV_FILE_PATH           = "../../_sensitive/transactions.csv";
-    static BILLERS_CSV_FILE_PATH                = "../../_sensitive/billers.csv";
+    static TRANSACTIONS_CSV_FILE_PATH           = "./_sensitive/transactions.csv";
+    static BILLERS_CSV_FILE_PATH                = "./_sensitive/billers.csv";
 
     static TRANSACTION_DATA_FIELD_INDEX_DATE    = 0;
     static TO_BE_NAMED_BILLER_TYPE              = "(?)";
