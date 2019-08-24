@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import AppModel from '../model/model';
 
-class DataParser extends Component {
+class DataParserVendor extends Component {
 
   constructor(props) {
     // Call super class
@@ -19,7 +19,7 @@ class DataParser extends Component {
   }
 
   componentWillMount(){
-    var localPath = './../_sensitive/billers.csv';
+    var localPath2 = './../_sensitive/billers.csv';
 
     // Your parse code, but not seperated in a function
     ////var csvFilePath = require('./../_sensitive/' + ${this.testUrl}/*AppModel.BILLERS_CSV_FILE_PATH*/);
@@ -42,11 +42,6 @@ class DataParser extends Component {
     // Here this is available and we can call this.setState (since it's binded in the constructor)
     this.setState({data: data}); // or shorter ES syntax: this.setState({ data });
 
-    console.log(data);
-
-
-
-
     // log
     // Util.logFunctionCall("onBillerDataParseComplete");
 
@@ -62,15 +57,8 @@ class DataParser extends Component {
 
         this.billerDict[rowData[1]] = rowData[0];
 
-        console.log(i + ": _payee:" + rowData['Payee'] + " _expenseType:" + rowData['ExpenseType']);
+        // console.log(i + ": _payee:" + rowData['Payee'] + " _expenseType:" + rowData['ExpenseType']);
     }
-
-
-
-
-
-
-
   }
 
   render(){
@@ -79,4 +67,4 @@ class DataParser extends Component {
   }
 }
 
-export default DataParser;
+export default DataParserVendor;
