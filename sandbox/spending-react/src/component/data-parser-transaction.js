@@ -12,7 +12,17 @@ class DataParserTransaction extends Component {
     // this.updateData = this.updateData.bind(this);
 
     // TODO - move external to PARSER class!
-    this.transactionData = {};
+    this.state = {data: {}};
+  }
+
+  changeHandler = (data) => {
+    if (typeof this.props.onDataReady === 'function') {
+        this.props.onDataReady(this.state.data/*e.target.value*/);
+
+        console.log("** PRE ************** updateData @ changeHandler: ");
+    }
+
+    console.log("**************** updateData @ changeHandler: ");
   }
 
   componentWillMount(){
@@ -32,26 +42,29 @@ class DataParserTransaction extends Component {
   }
 
   updateData = (result) => {
-    const data = result.data;
+    // const data = result.data;
 
-    // Here this is available and we can call this.setState (since it's binded in the constructor)
-    this.setState({data: data}); // or shorter ES syntax: this.setState({ data });
-
-    for(var i = 0; i < data.length; i++)
-    {
-      console.log("TRANSACTION " + "_" + i + ": data _date:" + data[i]['Date']);
-    }
+    // set data
+    this.setState({data: result.data});
+    // or shorter ES syntax: this.setState({ data });
 
     // log
     // Util.logFunctionCall("onBillerDataParseComplete");
+    for(var i = 0; i < result.data.length; i++)
+    {
+     /// console.log("TRANSACTION " + "_" + (i + 1) + ": data _date:" + result.data[i]['Date']);
+    }
 
-    // save data
-    this.transactionData = data;
+
+
+
+    // notify?
+    this.changeHandler(null);
   }
 
   render(){
     // Your render function
-    return <div>Data</div>
+    return <div>Data: {this.state.data.length}</div>
   }
 }
 
