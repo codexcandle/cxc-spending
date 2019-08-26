@@ -3,6 +3,7 @@ import React from 'react';
 import DataParserVendor from './data-parser-vendor';
 import DataParserTransaction from './data-parser-transaction';
 import AppModel from './../model/model';
+import D3Helper from './../util/d3-helper';
 
 class App extends React.Component{
     constructor(props){
@@ -28,13 +29,14 @@ class App extends React.Component{
         let row =  data[1];
     
         // read date field 
-        let dateLastStr = row[AppModel.TRANSACTION_DATA_FIELD_INDEX_DATE];
-console.log("__33___________DATE-STR: " + data/*dateLastStr*/);
+        let dateLastStr = row[AppModel.TRANSACTION_DATA_FIELD_DATE];
 
         // // parse year
-        // let year = D3Helper.getDateStringYear(dateLastStr);
+        let year = D3Helper.getDateStringYear(dateLastStr);
         // //////// setYearFormFieldValue(year);
     
+console.log("year: " + year);
+
         // // parse month
         // let month = D3Helper.getDateStringMonth(dateLastStr);
         //////// setMonthFormFieldValue(month);

@@ -18,11 +18,7 @@ class DataParserTransaction extends Component {
   changeHandler = (data) => {
     if (typeof this.props.onDataReady === 'function') {
         this.props.onDataReady(this.state.data/*e.target.value*/);
-
-        console.log("** PRE ************** updateData @ changeHandler: ");
     }
-
-    console.log("**************** updateData @ changeHandler: ");
   }
 
   componentWillMount(){

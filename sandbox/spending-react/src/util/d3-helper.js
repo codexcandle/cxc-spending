@@ -1,3 +1,5 @@
+import d3           from 'd3';
+
 class D3Helper{
     static getDateStringYear(dateStr){
         let dateFormat = d3.timeFormat("%Y");

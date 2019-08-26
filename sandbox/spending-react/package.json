@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "d3": "^5.11.0",
     "papaparse": "^5.0.2",
     "path": "^0.12.7",
     "react": "^16.9.0",
